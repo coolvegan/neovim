@@ -38,6 +38,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'ray-x/aurora' 
 Plug 'windwp/nvim-autopairs'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'lspcontainers/lspcontainers.nvim'
 call plug#end()
 
 "Setze Leader auf Leertaste
