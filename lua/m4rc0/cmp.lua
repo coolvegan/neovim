@@ -1,11 +1,16 @@
- -- Set up nvim-cmp.
+ 
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  require('lspconfig')['pyright'].setup {
+    capabilities = capabilities
+  }
+-- Set up nvim-cmp.
   local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        require('luasnip').expand_snippet(args.body) 
       end,
     },
     window = {
@@ -21,20 +26,12 @@
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'snippy' }, -- For snippy users.
+      { name = 'luasnip' },
     }, {
       { name = 'buffer' },
     })
   })
 
-  -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-      { name = 'buffer' },
-    })
-  })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
@@ -54,8 +51,14 @@
     })
   })
 
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  }
+
+
+  -- Set configuration for specific filetype.
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    }, {
+      { name = 'buffer' },
+    })
+  })
 

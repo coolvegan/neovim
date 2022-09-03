@@ -10,6 +10,8 @@ set ruler
 set autoindent
 set encoding=UTF-8
 set colorcolumn=80
+set nobackup
+set noswapfile
 
 call plug#begin()
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
@@ -35,11 +37,11 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
 Plug 'ray-x/lsp_signature.nvim'
-Plug 'ray-x/aurora' 
 Plug 'windwp/nvim-autopairs'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'lspcontainers/lspcontainers.nvim'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 call plug#end()
 
 "Setze Leader auf Leertaste
