@@ -12,6 +12,7 @@ set encoding=UTF-8
 set colorcolumn=80
 set nobackup
 set noswapfile
+set clipboard+=unnamedplus
 
 call plug#begin()
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
@@ -42,6 +43,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'lspcontainers/lspcontainers.nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'folke/tokyonight.nvim'
+Plug 'ray-x/aurora'
 call plug#end()
 
 "Setze Leader auf Leertaste
@@ -124,13 +127,6 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-
-set background = "dark"
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-set termguicolors
-
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+colorscheme aurora
