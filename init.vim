@@ -45,6 +45,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'folke/tokyonight.nvim'
 Plug 'ray-x/aurora'
+Plug 'p00f/clangd_extensions.nvim'
 call plug#end()
 
 "Setze Leader auf Leertaste

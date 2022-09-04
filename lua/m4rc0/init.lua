@@ -6,4 +6,6 @@ require('m4rc0.lsp_signature')
 require('m4rc0.autopairs')
 require('m4rc0.dockerls')
 require('m4rc0.treesitter')
+require('m4rc0.ccpp')
+require('m4rc0.ruby')
 
