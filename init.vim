@@ -46,6 +46,10 @@ Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'folke/tokyonight.nvim'
 Plug 'ray-x/aurora'
 Plug 'p00f/clangd_extensions.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'leoluz/nvim-dap-go'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 call plug#end()
 
 "Setze Leader auf Leertaste
