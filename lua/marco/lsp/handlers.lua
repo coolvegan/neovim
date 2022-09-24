@@ -76,10 +76,12 @@ M.on_attach = function(client, bufnr)
 	-- vim.notify(client.name .. " starting...")
 	-- TODO: refactor this into a method that checks if string in list
 	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+		--client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "sumneko_lua" then
-		client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+		--client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "gopls" then
 		print("gooooooo gooo goo")
@@ -90,11 +92,11 @@ M.on_attach = function(client, bufnr)
 
 	lsp_keymaps(bufnr)
 
-	--[[ local status_ok, illuminate = pcall(require, "illuminate") ]]
-	--[[ if not status_ok then ]]
-	--[[ 	return ]]
-	--[[ end ]]
-	--[[ illuminate.on_attach(client) ]]
+	local status_ok, illuminate = pcall(require, "illuminate")
+	if not status_ok then
+		return
+	end
+	illuminate.on_attach(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
