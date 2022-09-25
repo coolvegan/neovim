@@ -84,7 +84,6 @@ M.on_attach = function(client, bufnr)
 		--client.resolved_capabilities.document_formatting = false
 	end
 	if client.name == "gopls" then
-		print("gooooooo gooo goo")
 	end
 	if client.name == "solargraph" then
 		print("Ruby")
